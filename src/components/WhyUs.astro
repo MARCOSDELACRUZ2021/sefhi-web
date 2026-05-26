@@ -1,0 +1,164 @@
+---
+const reasons = [
+  {
+    emoji: '⚡',
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />`,
+    title: 'Atención rápida y profesional',
+    description: 'Respondemos en menos de 2 horas. Sabemos que cuando hay un problema sanitario, el tiempo es lo más importante.',
+    stat: '< 2h',
+    statLabel: 'Tiempo de respuesta',
+    bg: 'bg-orange-50',
+    iconColor: 'text-brand-orange',
+    statColor: 'text-brand-orange',
+  },
+  {
+    emoji: '👷',
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.982 18.725A7.488 7.488 0 0012 15.75a7.488 7.488 0 00-5.982 2.975m11.963 0a9 9 0 10-11.963 0m11.963 0A8.966 8.966 0 0112 21a8.966 8.966 0 01-5.982-2.275M15 9.75a3 3 0 11-6 0 3 3 0 016 0z" />`,
+    title: 'Técnicos capacitados y certificados',
+    description: 'Nuestro equipo tiene certificaciones actualizadas y formación continua en control de plagas e higiene industrial.',
+    stat: '100%',
+    statLabel: 'Personal certificado',
+    bg: 'bg-blue-50',
+    iconColor: 'text-brand-blue',
+    statColor: 'text-brand-blue',
+  },
+  {
+    emoji: '🛡️',
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0112 21c-1.268 0-2.39-.63-3.068-1.593a3.745 3.745 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.745 3.745 0 013.296-1.043A3.745 3.745 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.745 3.745 0 013.296 1.043 3.745 3.745 0 011.043 3.296A3.745 3.745 0 0121 12z" />`,
+    title: 'Productos seguros y certificados',
+    description: 'Solo usamos productos registrados ante COFEPRIS. Seguros para personas, mascotas y alimentos.',
+    stat: 'COFEPRIS',
+    statLabel: 'Productos registrados',
+    bg: 'bg-green-50',
+    iconColor: 'text-green-600',
+    statColor: 'text-green-600',
+  },
+  {
+    emoji: '📋',
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z" />`,
+    title: 'Reportes y documentación incluida',
+    description: 'Cada servicio incluye un informe técnico detallado para tu control interno, auditorías o requerimientos legales.',
+    stat: '100%',
+    statLabel: 'Documentado',
+    bg: 'bg-purple-50',
+    iconColor: 'text-purple-600',
+    statColor: 'text-purple-600',
+  },
+  {
+    emoji: '🏢',
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.75 3v11.25A2.25 2.25 0 006 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0118 16.5h-2.25m-7.5 0h7.5m-7.5 0l-1 3m8.5-3l1 3m0 0l.5 1.5m-.5-1.5h-9.5m0 0l-.5 1.5M9 11.25v1.5M12 9v3.75m3-6v6" />`,
+    title: 'Experiencia en negocios auditados',
+    description: 'Trabajamos con empresas que pasan auditorías de COFEPRIS, ISO 22000, HACCP y certificaciones NOM.',
+    stat: '+50',
+    statLabel: 'Empresas auditadas',
+    bg: 'bg-orange-50',
+    iconColor: 'text-brand-orange',
+    statColor: 'text-brand-orange',
+  },
+  {
+    emoji: '🌱',
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 013 12c0-1.605.42-3.113 1.157-4.418" />`,
+    title: 'Enfoque preventivo, no reactivo',
+    description: 'No esperamos a que el problema sea grave. Actuamos antes para que no afecte tu negocio o tu hogar.',
+    stat: '80%',
+    statLabel: 'Problemas prevenidos',
+    bg: 'bg-blue-50',
+    iconColor: 'text-brand-blue',
+    statColor: 'text-brand-blue',
+  },
+  {
+    emoji: '🤝',
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" />`,
+    title: 'Empresa formal y de confianza',
+    description: 'Legalmente constituida, con contrato claro, facturación y soporte postventa. Tu tranquilidad está garantizada.',
+    stat: '12+',
+    statLabel: 'Años en operación',
+    bg: 'bg-green-50',
+    iconColor: 'text-green-600',
+    statColor: 'text-green-600',
+  },
+];
+
+const sectors = ['Restaurantes', 'Hoteles', 'Hospitales', 'Industrias', 'Escuelas', 'Oficinas', 'Hogares', 'Cafeterías'];
+---
+
+<section id="why-us" class="relative section-padding overflow-hidden bg-brand-light">
+
+  <!-- Decoración de fondo -->
+  <div class="absolute top-0 right-0 w-80 h-80 bg-brand-orange-soft rounded-full blur-[100px] opacity-40 pointer-events-none" aria-hidden="true" />
+  <div class="absolute bottom-0 left-0 w-64 h-64 bg-brand-blue-soft rounded-full blur-[80px] opacity-40 pointer-events-none" aria-hidden="true" />
+
+  <div class="relative container-custom mx-auto max-w-7xl">
+
+    <!-- Encabezado -->
+    <div class="flex flex-col items-center text-center gap-5 mb-16">
+      <span class="section-badge animate-on-scroll" data-delay="0">Por qué elegirnos</span>
+      <h2 class="text-4xl xl:text-5xl font-bold leading-tight tracking-tight text-brand-dark max-w-3xl animate-on-scroll" data-delay="80">
+        La diferencia entre fumigar
+        <span class="gradient-text"> y realmente proteger</span>
+      </h2>
+      <p class="text-base text-brand-muted max-w-xl leading-relaxed animate-on-scroll" data-delay="160">
+        En SEFHI no solo aplicamos productos. Construimos un sistema de protección sanitaria con resultados reales y documentados.
+      </p>
+    </div>
+
+    <!-- Grid de razones -->
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 mb-14">
+      {reasons.map((reason, index) => (
+        <div
+          class="group card p-6 rounded-2xl flex flex-col gap-4 animate-on-scroll bg-white"
+          data-delay={String((index % 4) * 70)}
+        >
+          <div class="flex items-start justify-between gap-2">
+            <div class={`w-11 h-11 rounded-xl ${reason.bg} flex items-center justify-center flex-shrink-0 transition-transform duration-300 group-hover:scale-110`}>
+              <svg class={`w-5 h-5 ${reason.iconColor}`} fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <Fragment set:html={reason.icon} />
+              </svg>
+            </div>
+            <div class="flex flex-col items-end">
+              <span class={`text-xl font-black ${reason.statColor} leading-none`}>{reason.stat}</span>
+              <span class="text-[10px] text-brand-subtle font-medium text-right leading-tight mt-0.5">{reason.statLabel}</span>
+            </div>
+          </div>
+
+          <div class="flex flex-col gap-1.5">
+            <h3 class="text-sm font-bold text-brand-dark leading-snug">{reason.title}</h3>
+            <p class="text-xs text-brand-muted leading-relaxed">{reason.description}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- Sectores -->
+    <div class="animate-on-scroll" data-delay="0">
+      <div class="relative overflow-hidden rounded-3xl border border-brand-border bg-gradient-to-br from-white via-white to-brand-light/60 shadow-[0_18px_50px_rgba(0,0,0,0.08)] p-8 sm:p-10">
+        <div class="absolute -top-16 -right-16 w-56 h-56 rounded-full bg-brand-orange-soft/60 blur-3xl pointer-events-none" aria-hidden="true"></div>
+        <div class="absolute -bottom-20 -left-20 w-64 h-64 rounded-full bg-brand-blue-soft/60 blur-3xl pointer-events-none" aria-hidden="true"></div>
+
+        <div class="relative flex flex-col lg:flex-row items-center gap-10">
+          <div class="flex flex-col gap-4 lg:w-80 flex-shrink-0 text-center lg:text-left">
+
+            <h3 class="text-2xl sm:text-3xl font-bold text-brand-dark leading-tight">Sectores que atendemos</h3>
+            <p class="text-sm text-brand-muted leading-relaxed max-w-sm mx-auto lg:mx-0">
+              Adaptamos nuestro servicio a las necesidades de cada tipo de espacio y cliente.
+            </p>
+          </div>
+
+          <div class="flex flex-wrap gap-3 justify-center lg:justify-start">
+            {sectors.map((sector, i) => (
+              <span
+                class="group px-4 py-2.5 rounded-full text-sm font-semibold text-brand-body bg-white/90 border border-brand-border/90 shadow-sm backdrop-blur-sm hover:-translate-y-0.5 hover:shadow-md hover:bg-gradient-to-r hover:from-brand-orange-soft hover:to-white hover:text-brand-orange-dark hover:border-brand-orange/30 transition-all duration-300 cursor-default"
+                style={`animation-delay: ${i * 45}ms`}
+              >
+                <span class="inline-flex items-center gap-2">
+                  <span class="w-1.5 h-1.5 rounded-full bg-brand-orange/50 group-hover:bg-brand-orange-dark transition-colors duration-300" aria-hidden="true"></span>
+                  {sector}
+                </span>
+              </span>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,150 @@
+---
+const navLinks = [
+  { href: '/nosotros', label: '¿Qué es SEFHI?' },
+  { href: '/servicios', label: 'Servicios' },
+  { href: '/por-que-elegirnos', label: 'Por qué elegirnos' },
+  { href: '/contacto', label: 'Contacto' },
+];
+---
+
+<header id="navbar" class="fixed top-0 left-0 right-0 z-50 translate-y-0 opacity-100 transition-[transform,opacity] duration-700 ease-in-out">
+  <!-- Fondo del nav -->
+  <div
+    id="nav-bg"
+    class="absolute inset-0 bg-white/0 transition-all duration-400"
+  ></div>
+
+  <nav class="relative container-custom flex items-center justify-between h-20 px-4 sm:px-6 lg:px-8 mx-auto max-w-7xl">
+
+    <!-- Logo -->
+    <a href="/" class="flex items-center group" aria-label="SEFHI inicio">
+      <img
+        src="/images/logo-.png"
+        alt="SEFHI"
+        class="h-16 sm:h-20 w-auto object-contain transition-all duration-300 group-hover:scale-[1.02]"
+        loading="eager"
+        decoding="async"
+      />
+    </a>
+
+    <!-- Links escritorio -->
+    <ul class="hidden md:flex items-center gap-8">
+      {navLinks.map((link) => (
+        <li>
+          <a
+            href={link.href}
+            class="relative text-sm font-medium text-brand-body hover:text-brand-orange transition-colors duration-300 group"
+          >
+            {link.label}
+            <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-brand-orange rounded-full group-hover:w-full transition-all duration-300" />
+          </a>
+        </li>
+      ))}
+    </ul>
+
+    <!-- CTA escritorio -->
+    <a href="/contacto" class="hidden md:flex btn-primary text-sm">
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+          d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+      </svg>
+      Solicitar inspección
+    </a>
+
+    <!-- Botón hamburger móvil -->
+    <button
+      id="menu-toggle"
+      class="md:hidden relative w-10 h-10 flex flex-col justify-center items-center gap-1.5 rounded-xl hover:bg-gray-100 transition-colors"
+      aria-label="Abrir menú"
+      aria-expanded="false"
+    >
+      <span class="menu-bar w-5 h-0.5 bg-brand-dark rounded-full transition-all duration-300 origin-center" />
+      <span class="menu-bar w-5 h-0.5 bg-brand-dark rounded-full transition-all duration-300" />
+      <span class="menu-bar w-5 h-0.5 bg-brand-dark rounded-full transition-all duration-300 origin-center" />
+    </button>
+  </nav>
+
+  <!-- Menú móvil -->
+  <div
+    id="mobile-menu"
+    class="md:hidden overflow-hidden max-h-0 transition-[max-height] duration-500 ease-in-out bg-white border-t border-brand-border shadow-card-hover"
+  >
+    <div class="px-4 py-5 flex flex-col gap-1">
+      {navLinks.map((link) => (
+        <a
+          href={link.href}
+          class="mobile-nav-link text-brand-body hover:text-brand-orange hover:bg-brand-orange-pale font-medium px-4 py-3 rounded-xl transition-all duration-200"
+        >
+          {link.label}
+        </a>
+      ))}
+      <div class="pt-3 mt-2 border-t border-brand-border">
+        <a href="/contacto" class="btn-primary w-full text-sm">
+          Solicitar inspección
+        </a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<script>
+  const navbar = document.getElementById('navbar') as HTMLElement;
+  const navBg = document.getElementById('nav-bg') as HTMLElement;
+  const menuToggle = document.getElementById('menu-toggle') as HTMLButtonElement;
+  const mobileMenu = document.getElementById('mobile-menu') as HTMLElement;
+  const menuBars = document.querySelectorAll('.menu-bar');
+  let isOpen = false;
+  let lastScrollY = window.scrollY;
+
+  window.addEventListener('scroll', () => {
+    const currentScrollY = window.scrollY;
+
+    if (currentScrollY > 20) {
+      navBg.classList.add('bg-white/95', 'backdrop-blur-md', 'shadow-card');
+      navBg.classList.remove('bg-white/0');
+    } else {
+      navBg.classList.remove('bg-white/95', 'backdrop-blur-md', 'shadow-card');
+      navBg.classList.add('bg-white/0');
+    }
+
+    const scrollingDown = currentScrollY > lastScrollY + 8;
+    const scrollingUp = currentScrollY < lastScrollY - 18;
+    const nearTop = currentScrollY < 20;
+
+    if (nearTop || scrollingUp || isOpen) {
+      navbar.classList.remove('-translate-y-full', 'opacity-0', 'pointer-events-none');
+      navbar.classList.add('translate-y-0', 'opacity-100');
+    } else if (scrollingDown) {
+      navbar.classList.remove('translate-y-0', 'opacity-100');
+      navbar.classList.add('-translate-y-full', 'opacity-0', 'pointer-events-none');
+    }
+
+    lastScrollY = currentScrollY;
+  });
+
+  menuToggle.addEventListener('click', () => {
+    isOpen = !isOpen;
+    menuToggle.setAttribute('aria-expanded', String(isOpen));
+    if (isOpen) {
+      mobileMenu.style.maxHeight = mobileMenu.scrollHeight + 'px';
+      menuBars[0].classList.add('rotate-45', 'translate-y-2');
+      menuBars[1].classList.add('opacity-0', 'scale-x-0');
+      menuBars[2].classList.add('-rotate-45', '-translate-y-2');
+    } else {
+      mobileMenu.style.maxHeight = '0px';
+      menuBars[0].classList.remove('rotate-45', 'translate-y-2');
+      menuBars[1].classList.remove('opacity-0', 'scale-x-0');
+      menuBars[2].classList.remove('-rotate-45', '-translate-y-2');
+    }
+  });
+
+  document.querySelectorAll('.mobile-nav-link').forEach((link) => {
+    link.addEventListener('click', () => {
+      isOpen = false;
+      mobileMenu.style.maxHeight = '0px';
+      menuBars[0].classList.remove('rotate-45', 'translate-y-2');
+      menuBars[1].classList.remove('opacity-0', 'scale-x-0');
+      menuBars[2].classList.remove('-rotate-45', '-translate-y-2');
+    });
+  });
+</script>

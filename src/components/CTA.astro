@@ -1,0 +1,210 @@
+---
+---
+
+<section id="contact" class="relative section-padding overflow-hidden">
+
+  <!-- Fondo azul profundo -->
+  <div class="absolute inset-0 bg-gradient-to-br from-brand-blue-darker via-brand-blue-dark to-brand-blue" />
+
+  <!-- Decoraciones de fondo -->
+  <div class="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
+    <div class="absolute -top-32 -right-32 w-[500px] h-[500px] bg-white/5 rounded-full blur-[80px]" />
+    <div class="absolute -bottom-32 -left-32 w-[400px] h-[400px] bg-brand-orange/10 rounded-full blur-[80px]" />
+    <!-- Puntos decorativos -->
+    <div class="absolute top-1/4 left-1/4 w-2 h-2 rounded-full bg-white/20 animate-float" />
+    <div class="absolute bottom-1/3 right-1/3 w-3 h-3 rounded-full bg-brand-orange/30 animate-float-slow" style="animation-delay:-2s;" />
+    <div class="absolute top-2/3 left-2/3 w-2 h-2 rounded-full bg-white/15 animate-float" style="animation-delay:-4s;" />
+  </div>
+
+  <div class="relative container-custom mx-auto max-w-6xl">
+    <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+
+      <!-- Izquierda: Texto persuasivo -->
+      <div class="flex flex-col gap-8">
+
+        <div class="animate-on-scroll" data-delay="0">
+          <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 border border-white/20 text-white text-sm font-semibold">
+            <span class="w-2 h-2 rounded-full bg-brand-orange-light animate-pulse" />
+            Actúa hoy, no esperes a mañana
+          </span>
+        </div>
+
+        <div class="flex flex-col gap-4 animate-on-scroll" data-delay="80">
+          <h2 class="text-4xl xl:text-5xl font-black leading-tight tracking-tight text-white">
+            Tu operación no puede
+            <span class="text-brand-orange-light"> detenerse por una plaga.</span>
+          </h2>
+          <p class="text-base text-white/70 leading-relaxed">
+            Agenda hoy una inspección profesional con SEFHI y protege la imagen, higiene y seguridad de tu espacio. Te respondemos en menos de 2 horas.
+          </p>
+        </div>
+
+        <!-- Lista de beneficios -->
+        <ul class="flex flex-col gap-3.5 animate-on-scroll" data-delay="160">
+          {[
+            'Inspección inicial sin costo',
+            'Diagnóstico técnico detallado',
+            'Atención el mismo día',
+            'Cotización sin compromiso',
+          ].map((item) => (
+            <li class="flex items-center gap-3">
+              <div class="w-6 h-6 rounded-full bg-brand-orange flex items-center justify-center flex-shrink-0">
+                <svg class="w-3.5 h-3.5 text-white" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+              </div>
+              <span class="text-sm text-white/85 font-medium">{item}</span>
+            </li>
+          ))}
+        </ul>
+
+        <!-- Botones de contacto directo -->
+        <div class="flex flex-wrap gap-4 animate-on-scroll" data-delay="240">
+          <a
+            href="https://wa.me/521234567890?text=Hola%2C%20me%20interesa%20solicitar%20una%20inspecci%C3%B3n%20profesional%20con%20SEFHI"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn-primary text-sm"
+            aria-label="Contactar por WhatsApp"
+          >
+            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
+            </svg>
+            WhatsApp
+          </a>
+          <a
+            href="tel:+521234567890"
+            class="btn-white text-sm"
+            aria-label="Llamar a SEFHI"
+          >
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" />
+            </svg>
+            Llamar ahora
+          </a>
+        </div>
+      </div>
+
+      <!-- Derecha: Formulario de contacto -->
+      <div class="animate-on-scroll-right" data-delay="80">
+        <div class="bg-white rounded-3xl p-8 shadow-[0_20px_60px_rgba(0,0,0,0.2)]">
+          <div class="mb-6">
+            <h3 class="text-2xl font-bold text-brand-dark">Solicita tu inspección</h3>
+            <p class="text-sm text-brand-muted mt-1">Te contactamos en menos de 2 horas. 😊</p>
+          </div>
+
+          <form class="flex flex-col gap-4" id="contact-form" novalidate>
+            <div class="grid sm:grid-cols-2 gap-4">
+              <div class="flex flex-col gap-1.5">
+                <label for="name" class="text-xs font-semibold text-brand-body">Nombre completo</label>
+                <input
+                  id="name"
+                  name="name"
+                  type="text"
+                  required
+                  placeholder="Juan García"
+                  class="w-full px-4 py-3 rounded-xl bg-brand-light border border-brand-border text-brand-dark placeholder-brand-subtle text-sm outline-none focus:border-brand-orange focus:bg-white focus:ring-2 focus:ring-brand-orange/15 transition-all duration-300"
+                />
+              </div>
+              <div class="flex flex-col gap-1.5">
+                <label for="phone" class="text-xs font-semibold text-brand-body">Teléfono / WhatsApp</label>
+                <input
+                  id="phone"
+                  name="phone"
+                  type="tel"
+                  required
+                  placeholder="55 1234 5678"
+                  class="w-full px-4 py-3 rounded-xl bg-brand-light border border-brand-border text-brand-dark placeholder-brand-subtle text-sm outline-none focus:border-brand-orange focus:bg-white focus:ring-2 focus:ring-brand-orange/15 transition-all duration-300"
+                />
+              </div>
+            </div>
+
+            <div class="flex flex-col gap-1.5">
+              <label for="email" class="text-xs font-semibold text-brand-body">Correo electrónico</label>
+              <input
+                id="email"
+                name="email"
+                type="email"
+                placeholder="juan@empresa.com"
+                class="w-full px-4 py-3 rounded-xl bg-brand-light border border-brand-border text-brand-dark placeholder-brand-subtle text-sm outline-none focus:border-brand-orange focus:bg-white focus:ring-2 focus:ring-brand-orange/15 transition-all duration-300"
+              />
+            </div>
+
+            <div class="flex flex-col gap-1.5">
+              <label for="service" class="text-xs font-semibold text-brand-body">¿Qué necesitas?</label>
+              <select
+                id="service"
+                name="service"
+                class="w-full px-4 py-3 rounded-xl bg-brand-light border border-brand-border text-brand-body text-sm outline-none focus:border-brand-orange focus:bg-white focus:ring-2 focus:ring-brand-orange/15 transition-all duration-300 cursor-pointer"
+              >
+                <option value="">Selecciona un servicio</option>
+                <option value="control-plagas">Control de plagas</option>
+                <option value="higiene-industrial">Higiene industrial</option>
+                <option value="inspeccion">Inspección técnica</option>
+                <option value="programa-preventivo">Programa preventivo anual</option>
+                <option value="asesoramiento">No sé cuál necesito, quiero asesoría</option>
+              </select>
+            </div>
+
+            <div class="flex flex-col gap-1.5">
+              <label for="message" class="text-xs font-semibold text-brand-body">Cuéntanos tu situación <span class="text-brand-subtle font-normal">(opcional)</span></label>
+              <textarea
+                id="message"
+                name="message"
+                rows="3"
+                placeholder="¿Qué problema tienes o qué espacio necesitas proteger?"
+                class="w-full px-4 py-3 rounded-xl bg-brand-light border border-brand-border text-brand-dark placeholder-brand-subtle text-sm outline-none focus:border-brand-orange focus:bg-white focus:ring-2 focus:ring-brand-orange/15 transition-all duration-300 resize-none"
+              />
+            </div>
+
+            <button
+              type="submit"
+              id="submit-btn"
+              class="btn-primary w-full text-sm py-4"
+            >
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+              </svg>
+              Solicitar inspección gratuita
+            </button>
+
+            <p class="text-center text-xs text-brand-subtle">
+              Tu información es privada. Solo la usamos para contactarte.
+            </p>
+          </form>
+
+          <!-- Mensaje de éxito -->
+          <div id="success-msg" class="hidden flex-col items-center gap-4 py-8 text-center">
+            <div class="w-16 h-16 rounded-full bg-green-50 border-2 border-green-200 flex items-center justify-center">
+              <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+              </svg>
+            </div>
+            <div>
+              <p class="text-xl font-bold text-brand-dark">¡Listo! 🎉</p>
+              <p class="text-sm text-brand-muted mt-1">Recibimos tu solicitud. Te contactamos en menos de 2 horas.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const form = document.getElementById('contact-form') as HTMLFormElement;
+    const successMsg = document.getElementById('success-msg') as HTMLElement;
+    const submitBtn = document.getElementById('submit-btn') as HTMLButtonElement;
+
+    form?.addEventListener('submit', (e) => {
+      e.preventDefault();
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = `<span class="flex items-center gap-2 justify-center w-full"><svg class="w-4 h-4 animate-spin" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg>Enviando...</span>`;
+
+      setTimeout(() => {
+        form.style.display = 'none';
+        successMsg.classList.remove('hidden');
+        successMsg.classList.add('flex');
+      }, 1500);
+    });
+  </script>
+</section>

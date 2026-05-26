@@ -1,0 +1,153 @@
+---
+const services = [
+  {
+    id: 1,
+    emoji: '🪲',
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z" />`,
+    category: 'Control de Plagas',
+    title: 'Eliminación y prevención integral',
+    description:
+      'Eliminamos y prevenimos infestaciones de cucarachas, roedores, termitas, mosquitos, hormigas y más, con tratamientos seguros y monitoreo especializado.',
+    features: ['Diagnóstico sin costo', 'Tratamiento certificado', 'Monitoreo continuo', 'Seguro para tu familia'],
+    tag: 'Más solicitado',
+    tagColor: 'bg-orange-50 text-orange-600 border-orange-200',
+    iconBg: 'bg-orange-50',
+    iconColor: 'text-brand-orange-dark',
+    accentBar: 'bg-brand-orange',
+    linkColor: 'text-brand-orange-dark hover:text-brand-orange',
+  },
+  {
+    id: 2,
+    emoji: '🏭',
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" />`,
+    category: 'Higiene Industrial',
+    title: 'Estándares sanitarios de alto nivel',
+    description:
+      'Ayudamos a negocios e industrias a mantener condiciones sanitarias seguras y alineadas a los estándares de higiene y auditoría que requieren.',
+    features: ['Auditorías NOM', 'Documentación oficial', 'HACCP compliance', 'Capacitación al equipo'],
+    tag: 'Para empresas',
+    tagColor: 'bg-blue-50 text-blue-600 border-blue-200',
+    iconBg: 'bg-blue-50',
+    iconColor: 'text-brand-blue',
+    accentBar: 'bg-brand-blue',
+    linkColor: 'text-brand-blue hover:text-brand-blue-dark',
+  },
+  {
+    id: 3,
+    emoji: '🔍',
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />`,
+    category: 'Inspecciones Técnicas',
+    title: 'Detectamos lo que no se ve',
+    description:
+      'Identificamos riesgos invisibles antes de que se conviertan en problemas operativos o sanitarios que afecten tu negocio o tu hogar.',
+    features: ['Inspección detallada', 'Mapeo de riesgos', 'Informe completo', 'Recomendaciones claras'],
+    tag: 'Preventivo',
+    tagColor: 'bg-green-50 text-green-600 border-green-200',
+    iconBg: 'bg-green-50',
+    iconColor: 'text-green-600',
+    accentBar: 'bg-green-500',
+    linkColor: 'text-green-600 hover:text-green-700',
+  },
+  {
+    id: 4,
+    emoji: '📅',
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5" />`,
+    category: 'Programas Preventivos',
+    title: 'Protección todo el año',
+    description:
+      'Diseñamos planes periódicos de control para mantener tu espacio protegido durante todo el año, con visitas programadas y seguimiento personalizado.',
+    features: ['Plan 12 meses', 'Visitas periódicas', 'Ajuste estacional', 'Soporte prioritario'],
+    tag: 'Anual',
+    tagColor: 'bg-purple-50 text-purple-600 border-purple-200',
+    iconBg: 'bg-purple-50',
+    iconColor: 'text-purple-600',
+    accentBar: 'bg-purple-500',
+    linkColor: 'text-purple-600 hover:text-purple-700',
+  },
+];
+---
+
+<section id="services" class="relative section-padding overflow-hidden bg-white">
+
+  <div class="container-custom mx-auto max-w-7xl">
+
+    <!-- Encabezado -->
+    <div class="flex flex-col items-center text-center gap-5 mb-14">
+      <span class="section-badge animate-on-scroll" data-delay="0">Nuestros servicios</span>
+      <h2 class="text-4xl xl:text-5xl font-bold leading-tight tracking-tight text-brand-dark max-w-2xl animate-on-scroll" data-delay="80">
+        Soluciones para cada
+        <span class="gradient-text"> tipo de espacio</span>
+      </h2>
+      <p class="text-base text-brand-muted max-w-xl leading-relaxed animate-on-scroll" data-delay="160">
+        Desde hogares hasta grandes industrias, tenemos el protocolo y la experiencia para proteger cualquier espacio de manera efectiva.
+      </p>
+    </div>
+
+    <!-- Grid de servicios -->
+    <div class="grid md:grid-cols-2 gap-6">
+      {services.map((service, index) => (
+        <article
+          class="group card relative p-8 rounded-2xl overflow-hidden animate-on-scroll"
+          data-delay={String(index * 80)}
+        >
+          <!-- Barra de acento superior -->
+          <div class={`absolute top-0 left-0 right-0 h-1 ${service.accentBar}`} aria-hidden="true" />
+
+          <!-- Encabezado de la tarjeta -->
+          <div class="flex items-center justify-between mb-6">
+            <span class={`px-3 py-1 rounded-full text-xs font-semibold border ${service.tagColor}`}>
+              {service.tag}
+            </span>
+            <div class={`w-12 h-12 rounded-xl ${service.iconBg} flex items-center justify-center transition-transform duration-300 group-hover:scale-110`}>
+              <svg class={`w-6 h-6 ${service.iconColor}`} fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <Fragment set:html={service.icon} />
+              </svg>
+            </div>
+          </div>
+
+          <!-- Contenido -->
+          <div class="flex flex-col gap-4">
+            <div>
+              <p class={`text-xs font-bold tracking-wider uppercase ${service.iconColor} mb-2`}>
+                {service.category}
+              </p>
+              <h3 class="text-xl font-bold text-brand-dark leading-snug">
+                {service.title}
+              </h3>
+            </div>
+
+            <p class="text-brand-muted text-sm leading-relaxed">
+              {service.description}
+            </p>
+
+            <!-- Lista de características -->
+            <ul class="grid grid-cols-2 gap-2 mt-1">
+              {service.features.map((feature) => (
+                <li class="flex items-center gap-2 text-xs text-brand-body">
+                  <svg class={`w-3.5 h-3.5 ${service.iconColor} flex-shrink-0`} fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                  </svg>
+                  {feature}
+                </li>
+              ))}
+            </ul>
+
+            <!-- Link de acción -->
+            <div class="pt-4 border-t border-brand-border flex items-center justify-between">
+              <a
+                href="/contacto"
+                class={`text-sm font-semibold ${service.linkColor} flex items-center gap-1.5 hover:gap-3 transition-all duration-300`}
+              >
+                Solicitar este servicio
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                </svg>
+              </a>
+              <span class="text-xl">{service.emoji}</span>
+            </div>
+          </div>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
