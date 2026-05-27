@@ -23,8 +23,8 @@
   }
 
   ::selection {
-    background: rgba(249, 115, 22, 0.15);
-    color: #EA580C;
+    background: rgba(255, 103, 0, 0.18);
+    color: #D45500;
   }
 
   ::-webkit-scrollbar {
@@ -36,12 +36,12 @@
   }
 
   ::-webkit-scrollbar-thumb {
-    background: #FB923C;
+    background: #FF8533;
     border-radius: 3px;
   }
 
   ::-webkit-scrollbar-thumb:hover {
-    background: #F97316;
+    background: #FF6700;
   }
 }
 
@@ -150,7 +150,7 @@
   }
 
   .shadow-orange-glow {
-    box-shadow: 0 0 24px rgba(249, 115, 22, 0.3);
+    box-shadow: 0 0 32px rgba(255, 103, 0, 0.40);
   }
 
   .bg-dots {
@@ -159,7 +159,7 @@
   }
 
   .bg-wave {
-    background-image: url("data:image/svg+xml,%3Csvg width='100' height='20' viewBox='0 0 100 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 10 Q25 0 50 10 Q75 20 100 10' stroke='%23F97316' stroke-opacity='0.08' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml,%3Csvg width='100' height='20' viewBox='0 0 100 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 10 Q25 0 50 10 Q75 20 100 10' stroke='%23FF6700' stroke-opacity='0.10' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");
     background-size: 100px 20px;
   }
 }
