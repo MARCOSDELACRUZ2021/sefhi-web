@@ -1,5 +1,14 @@
 ---
+interface Props {
+  darkHero?: boolean;
+}
+
+const { darkHero = false } = Astro.props;
+
+const isHome = Astro.url.pathname === '/';
+
 const navLinks = [
+  ...(isHome ? [] : [{ href: '/', label: 'Inicio' }]),
   { href: '/nosotros', label: '¿Qué es SEFHI?' },
   { href: '/servicios', label: 'Servicios' },
   { href: '/por-que-elegirnos', label: 'Por qué elegirnos' },
@@ -7,11 +16,11 @@ const navLinks = [
 ];
 ---
 
-<header id="navbar" class="fixed top-0 left-0 right-0 z-50 translate-y-0 opacity-100 transition-[transform,opacity] duration-700 ease-in-out">
+<header id="navbar" data-dark-hero={darkHero ? 'true' : 'false'} class="fixed top-0 left-0 right-0 z-50 translate-y-0 opacity-100 transition-[transform,opacity] duration-700 ease-in-out">
   <!-- Fondo del nav -->
   <div
     id="nav-bg"
-    class="absolute inset-0 bg-white/0 transition-all duration-400"
+    class="absolute inset-x-0 top-0 h-20 bg-white/0 transition-all duration-400"
   ></div>
 
   <nav class="relative container-custom flex items-center justify-between h-20 px-4 sm:px-6 lg:px-8 mx-auto max-w-7xl">
@@ -33,7 +42,7 @@ const navLinks = [
         <li>
           <a
             href={link.href}
-            class="relative text-sm font-medium text-brand-body hover:text-brand-orange transition-colors duration-300 group"
+            class={`nav-desktop-link relative text-sm font-medium ${darkHero ? 'text-white/85' : 'text-brand-body'} hover:text-brand-orange transition-colors duration-300 group`}
           >
             {link.label}
             <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-brand-orange rounded-full group-hover:w-full transition-all duration-300" />
@@ -58,9 +67,9 @@ const navLinks = [
       aria-label="Abrir menú"
       aria-expanded="false"
     >
-      <span class="menu-bar w-5 h-0.5 bg-brand-dark rounded-full transition-all duration-300 origin-center" />
-      <span class="menu-bar w-5 h-0.5 bg-brand-dark rounded-full transition-all duration-300" />
-      <span class="menu-bar w-5 h-0.5 bg-brand-dark rounded-full transition-all duration-300 origin-center" />
+      <span class={`menu-bar w-5 h-0.5 ${darkHero ? 'bg-white/80' : 'bg-brand-dark'} rounded-full transition-all duration-300 origin-center`} />
+      <span class={`menu-bar w-5 h-0.5 ${darkHero ? 'bg-white/80' : 'bg-brand-dark'} rounded-full transition-all duration-300`} />
+      <span class={`menu-bar w-5 h-0.5 ${darkHero ? 'bg-white/80' : 'bg-brand-dark'} rounded-full transition-all duration-300 origin-center`} />
     </button>
   </nav>
 
@@ -92,7 +101,9 @@ const navLinks = [
   const navBg = document.getElementById('nav-bg') as HTMLElement;
   const menuToggle = document.getElementById('menu-toggle') as HTMLButtonElement;
   const mobileMenu = document.getElementById('mobile-menu') as HTMLElement;
-  const menuBars = document.querySelectorAll('.menu-bar');
+  const menuBars = document.querySelectorAll<HTMLElement>('.menu-bar');
+  const navDesktopLinks = document.querySelectorAll<HTMLElement>('.nav-desktop-link');
+  const isDarkHero = navbar.dataset.darkHero === 'true';
   let isOpen = false;
   let lastScrollY = window.scrollY;
 
@@ -102,9 +113,29 @@ const navLinks = [
     if (currentScrollY > 20) {
       navBg.classList.add('bg-white/95', 'backdrop-blur-md', 'shadow-navbar');
       navBg.classList.remove('bg-white/0');
+      if (isDarkHero) {
+        navDesktopLinks.forEach(el => {
+          el.classList.remove('text-white/85');
+          el.classList.add('text-brand-body');
+        });
+        menuBars.forEach(bar => {
+          bar.classList.remove('bg-white/80');
+          bar.classList.add('bg-brand-dark');
+        });
+      }
     } else {
       navBg.classList.remove('bg-white/95', 'backdrop-blur-md', 'shadow-navbar');
       navBg.classList.add('bg-white/0');
+      if (isDarkHero) {
+        navDesktopLinks.forEach(el => {
+          el.classList.add('text-white/85');
+          el.classList.remove('text-brand-body');
+        });
+        menuBars.forEach(bar => {
+          bar.classList.add('bg-white/80');
+          bar.classList.remove('bg-brand-dark');
+        });
+      }
     }
 
     const scrollingDown = currentScrollY > lastScrollY + 8;
